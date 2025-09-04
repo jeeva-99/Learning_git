@@ -89,7 +89,7 @@ class UpdateBookApi(generics.UpdateAPIView):
             print(args,kwargs)
 
             old_book = Book.objects.get(pk=kwargs['pk'])
-            serializer = self.get_serializer(old_book, data=request.data)
+            serializer =BookSerializer(old_book, data=request.data)
             if serializer.is_valid():
                 self.perform_update(serializer)
                 return Response(
