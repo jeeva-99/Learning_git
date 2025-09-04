@@ -61,23 +61,23 @@ class BookCreateApi(generics.CreateAPIView):
             )
 
 
-# class BookCreate(generics.CreateAPIView):
-#     serializer_class = BookCostomSerializer
-#
-#     def post(self, request, *args, **kwargs):
-#         try:
-#             serializer = BookCostomSerializer(data=request.data)
-#             if serializer.is_valid():
-#                 book = Book.objects.create(
-#                     name=serializer.validated_data['name'],
-#                     author=serializer.validated_data['author'],
-#                     published_year=serializer.validated_data['published_year'],
-#                 )
-#                 serializer.save()
-#                 return Response({"success": True, "message": serializer.data}, status=status.HTTP_201_CREATED)
-#             return Response({"success": False, "message": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-#         except Exception as e:
-#             return Response({"message":str(e)},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+class BookCreate(generics.CreateAPIView):
+    serializer_class = BookCostomSerializer
+
+    def post(self, request, *args, **kwargs):
+        try:
+            serializer = BookCostomSerializer(data=request.data)
+            if serializer.is_valid():
+                book = Book.objects.create(
+                    name=serializer.validated_data['name'],
+                    author=serializer.validated_data['author'],
+                    published_year=serializer.validated_data['published_year'],
+                )
+                serializer.save()
+                return Response({"success": True, "message": serializer.data}, status=status.HTTP_201_CREATED)
+            return Response({"success": False, "message": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response({"message":str(e)},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 
