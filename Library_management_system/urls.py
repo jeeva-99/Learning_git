@@ -20,3 +20,4 @@ urlpatterns = [
     path('swagger/',schema_view.with_ui(cache_timeout=0),name="swagger_ui")
 
 ]
+#hi
