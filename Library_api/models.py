@@ -6,3 +6,4 @@ class Book(models.Model):
     published_year=models.IntegerField()
     #vanakkam da mapla viralimalayila irunthu
 #this is model
+#jhkughgftftyf
