@@ -21,3 +21,5 @@ class BookDetailSerializer(serializers.Serializer):
     name = serializers.CharField()
     author = serializers.CharField()
     published_year = serializers.IntegerField()
+
+#this is serializer
