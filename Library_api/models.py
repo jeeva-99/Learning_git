@@ -5,3 +5,5 @@ class Book(models.Model):
     author=models.CharField(max_length=100)
     published_year=models.IntegerField()
     #vanakkam da mapla viralimalayila irunthu
+#this is model
+#jhkughgftftyf
